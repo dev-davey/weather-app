@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Form from './components/Form'
+import Heading from './components/Heading'
+import Forcast from './components/Forecast'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    temperature: "",
+    city: "",
+    country: "",
+    humidity: "",
+    base: "",
+    icon: "",
+    description: "",
+    error: ""
+  }
+  
+  async getData() {
+    const url = "api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=36dbd4f4d180c0a6ea3f797fe7c0402d"
+    const apiCall = await fetch(url)
+    const response = await apiCall.json();
+    console.log(response)
+    //this.setState({
+      //base: this.state.base = response.base
+    //})
+  }
+    
+
+  render() {
+    return (
+      <div>
+        <Heading/>
+        <Form />
+        <Forcast/>
+      </div>
+    )
+  }
 }
 
-export default App;
+
