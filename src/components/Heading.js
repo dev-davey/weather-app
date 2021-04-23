@@ -3,8 +3,8 @@ import React from 'react';
 const Heading = (props) => {
     return(
         <div>
-            <h1>Whats the weather like?</h1>
-            <h3>Find out what the weather conditions are in your city.</h3>
+            <h1>Weather Forcast</h1>
+            <h3>Search to find what the weather is like in your area.</h3>
         </div>
     )
 }
