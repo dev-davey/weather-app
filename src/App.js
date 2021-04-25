@@ -32,6 +32,7 @@ export default class App extends Component {
     this.setState({humidity: data.main.humidity})
     this.setState({country: data.sys.country})
     this.setState({icon: data.weather[0].icon})
+    this.setState({wind: data.wind.speed})
     console.log(data)}
     else{
       this.setState({
@@ -56,18 +57,20 @@ export default class App extends Component {
   
   render() {
     return (
-      <div className="app">
-        <Heading/>
+      <div className="container">
+        <Heading city={this.state.city}  country={this.state.country}/>
 
-        <div className="formStyle">
-          <form>
-              <input type="text" name='searchCity' onChange={this.handleInputChange} placeholder="Choose Your City"/>
-              <input type="text" name='searchCountry' onChange={this.handleInputChange}  placeholder="Choose Your Country"/>
-              <button id="submitBtn" type="submit" onClick={this.handleSubmit}>Get Weather</button>
-              <h3>{this.state.error}</h3>
-          </form>
-        </div>
-        <Forcast city={this.state.city} country={this.state.country} description={this.state.description} temperature={this.state.temperature} humidity={this.state.humidity} icon={this.state.icon} searchCountry={this.state.searchCountry}/>
+          <div className="formStyle">
+            <form>
+                <input type="text" name='searchCity' onChange={this.handleInputChange} placeholder="Choose Your City"/>
+                <input type="text" name='searchCountry' onChange={this.handleInputChange}  placeholder="Choose Your Country"/>
+                <button id="submitBtn" type="submit" onClick={this.handleSubmit}>Get Weather</button>
+                <h3>{this.state.error}</h3>
+            </form>
+          </div>
+          <div>
+            <Forcast city={this.state.city} description={this.state.description} temperature={this.state.temperature} humidity={this.state.humidity} icon={this.state.icon} searchCountry={this.state.searchCountry} wind={this.state.wind}/>
+            </div>
       </div>
     )
   }
