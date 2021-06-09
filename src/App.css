@@ -1,6 +1,7 @@
 html,
 body {
   min-height: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -8,8 +9,8 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: rgb(255, 255, 255);
-  text-shadow: black 4px 4px 4px;
+  color: rgb(255, 254, 254);
+  text-shadow: black 2px 2px 2px;
   text-transform: uppercase;
 }
 
@@ -31,8 +32,8 @@ body {
 }
 
 .forcast {
-  color: #fff;
-  font-size: 1rem;
+  color: rgb(255, 251, 251);
+  font-size: 1.4rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -49,6 +50,7 @@ body {
 }
 
 .formStyle {
+  max-width: 100%;
   width: 400px;
   height: 130px;
   margin: auto;
@@ -83,4 +85,29 @@ body {
   font-weight: 600;
   border-radius: 5px;
   width: 40%;
+}
+
+@media only screen and (max-width: 700px) {
+  .formStyle {
+    max-width: 100%;
+    width: 80vw;
+    height: 130px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .formStyle input {
+    height: 0.7rem;
+    width: 70vw;
+  }
+
+  .headerText {
+    color: white;
+    font-size: 0.7rem;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  .forcast {
+    font-size: 0.7rem;
+  }
 }
