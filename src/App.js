@@ -25,7 +25,7 @@ export default class App extends Component {
   }
 
   performFirstSearch = () => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=New York,United States&APPID=36dbd4f4d180c0a6ea3f797fe7c0402d`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=New York,United States&APPID=36dbd4f4d180c0a6ea3f797fe7c0402d`)
     .then(response => response.json())
     .then(data => {
     this.setState({
@@ -45,7 +45,7 @@ export default class App extends Component {
 
   //async api call
   performSearch = () => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.searchCity},${this.state.searchCountry}&APPID=36dbd4f4d180c0a6ea3f797fe7c0402d`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.searchCity},${this.state.searchCountry}&APPID=36dbd4f4d180c0a6ea3f797fe7c0402d`)
     .then(response => response.json())
     .then(data => {
     this.setState({
